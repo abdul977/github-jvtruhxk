@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark {
+  color-scheme: dark;
+}
+
+.dark .rhap_container {
+  background-color: #1f2937;
+  box-shadow: none;
+}
+
+.dark .rhap_time,
+.dark .rhap_current-time {
+  color: #9ca3af;
+}
+
+.dark .rhap_progress-filled,
+.dark .rhap_progress-indicator {
+  background-color: #60a5fa;
+}
+
+.dark .rhap_progress-bar {
+  background-color: #4b5563;
+}
+
+.dark .rhap_button-clear {
+  color: #9ca3af;
+}
+
+.dark .rhap_volume-indicator,
+.dark .rhap_volume-bar {
+  background-color: #60a5fa;
+}
+
+.ProseMirror {
+  @apply min-h-[200px] outline-none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-gray-400 float-left h-0 pointer-events-none;
+  content: attr(data-placeholder);
+}
+
+.dark .ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-gray-600;
+}
