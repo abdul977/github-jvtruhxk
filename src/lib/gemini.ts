@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI('AIzaSyDwhiMVQ-0ilOSoD_7NhL_eXtbUVHGQuUs');
 
 interface Note {
   content: string;
@@ -9,7 +9,7 @@ interface Note {
 }
 
 export async function synthesizeIdea(notes: Note[]) {
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro-flash' });
 
   const combinedContent = notes
     .map(note => {
